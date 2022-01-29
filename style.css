@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.layout {
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "header header header header header"
+    "sidebar main main main main"
+    ;
+}
+
+header {
+    background-color: lightblue;
+    grid-area: header;
+    min-height: 10vh;
+}
+
+aside {
+    background-color: lightcoral;
+    grid-area: sidebar;
+    position: sticky;
+    top: 0rem;
+    overflow-y: auto;
+    height: calc(100vh - 2rem);      /*if it is 100vh then goes to end, 100-2rem means margin-bottom : 2rem*/
+}
+
+main {
+    background-color: lightslategray;
+    grid-area: main;
+    width: 100%;
+    max-width: 100vw;
+    padding: 2rem;
+}
